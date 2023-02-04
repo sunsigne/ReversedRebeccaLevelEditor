@@ -2,6 +2,7 @@ package com.sunsigne.reversedrebeccaleveleditor.system.controllers.mouse;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseWheelEvent;
 
 import com.sunsigne.reversedrebecca.object.characteristics.Position;
 import com.sunsigne.reversedrebecca.system.controllers.mouse.MousePos;
@@ -18,6 +19,9 @@ public interface MouseUserEvent extends Position, Updatable {
 	void mousePressed(MouseEvent e);
 
 	void mouseReleased(MouseEvent e);
+
+	default void mouseWheelMoved(MouseWheelEvent e) {
+	}
 
 	default boolean isSelected() {
 		return mouseOver(new MousePos().get(), getRect()) && isClickable();

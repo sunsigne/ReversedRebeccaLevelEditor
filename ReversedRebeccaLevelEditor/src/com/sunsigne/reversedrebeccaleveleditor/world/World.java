@@ -86,11 +86,12 @@ public class World implements Updatable, TickFree {
 
 	////////// RENDER ////////////
 
+	public int pixel = 32;
+	
 	@Override
 	public void render(Graphics g) {
 		BufferedImage img = map;
 
-		int pixel = 32;
 		int ratio = Size.M / pixel;
 		int width = img.getWidth() * ratio;
 		int height = img.getHeight() * ratio;
