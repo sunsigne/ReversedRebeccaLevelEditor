@@ -3,13 +3,14 @@ package com.sunsigne.reversedrebeccaleveleditor.world;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import com.sunsigne.reversedrebecca.pattern.render.TransluantLayer;
+import com.sunsigne.reversedrebecca.pattern.ForceInit;
 import com.sunsigne.reversedrebecca.ressources.images.ImageTask;
 import com.sunsigne.reversedrebecca.system.Size;
 import com.sunsigne.reversedrebecca.system.mainloop.TickFree;
 import com.sunsigne.reversedrebecca.system.mainloop.Updatable;
 import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
 import com.sunsigne.reversedrebeccaleveleditor.system.Editor;
+import com.sunsigne.reversedrebeccaleveleditor.world.mouse.WorldMouse;
 
 public class World implements Updatable, TickFree {
 
@@ -32,7 +33,7 @@ public class World implements Updatable, TickFree {
 	public World(String mapName) {
 		initParameters(mapName);
 		createMap();
-		// addControlers();
+		addControllers();
 		start();
 	}
 
@@ -44,6 +45,10 @@ public class World implements Updatable, TickFree {
 	private void createMap() {
 		loadImageMap();
 		// new MapCreator().loadAllLayers(this);
+	}
+
+	private void addControllers() {
+		addMouseListener();
 	}
 
 	private void start() {
@@ -80,17 +85,23 @@ public class World implements Updatable, TickFree {
 	}
 
 	////////// RENDER ////////////
-	
+
 	@Override
 	public void render(Graphics g) {
 		BufferedImage img = map;
-		
+
 		int pixel = 32;
 		int ratio = Size.M / pixel;
 		int width = img.getWidth() * ratio;
 		int height = img.getHeight() * ratio;
 
 		g.drawImage(img, 0, 0, width, height, null);
+	}
+
+	////////// MOUSE ////////////
+
+	private void addMouseListener() {
+		new ForceInit().loadAllClassesInPackage(WorldMouse.class.getPackageName());
 	}
 
 }
