@@ -1,5 +1,7 @@
 package com.sunsigne.reversedrebeccaleveleditor.system;
 
+import com.sunsigne.reversedrebeccaleveleditor.world.World;
+
 public class Conductor {
 
 	////////// START & STOP ////////////
@@ -8,6 +10,8 @@ public class Conductor {
 		
 		new Window(Editor.getInstance());
 		Editor.getInstance().start();
+		
+		new World("test");
 		
 		/*
 		new GameCursor().setCursor(CURSOR_TYPE.NORMAL);
