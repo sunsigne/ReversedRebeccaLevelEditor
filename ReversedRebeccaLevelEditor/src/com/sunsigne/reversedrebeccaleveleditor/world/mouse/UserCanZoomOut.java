@@ -38,19 +38,11 @@ public class UserCanZoomOut extends WorldMouse implements TickFree {
 		if (World.get() == null)
 			return;
 
-		int scale = World.get().pixel == 40 || World.get().pixel == 48 ? 16 : 8;
+		if (e.getWheelRotation() > 0)
+			World.get().zoomIn();
 
-		if (e.getWheelRotation() > 0) {
-			if (World.get().pixel < 56)
-				World.get().pixel += scale;
-		}
-
-		else {
-			if (World.get().pixel > 8)
-				World.get().pixel -= scale;
-		}
-
-		System.out.println(World.get().pixel);
+		else
+			World.get().zoomOut();
 	}
 
 }

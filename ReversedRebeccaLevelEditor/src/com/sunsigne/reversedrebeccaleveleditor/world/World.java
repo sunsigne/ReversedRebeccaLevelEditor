@@ -12,7 +12,7 @@ import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
 import com.sunsigne.reversedrebeccaleveleditor.system.Editor;
 import com.sunsigne.reversedrebeccaleveleditor.world.mouse.WorldMouse;
 
-public class World implements Updatable, TickFree {
+public class World implements Updatable, TickFree, Zoomable {
 
 	////////// SELF-CONTAINED ////////////
 
@@ -64,6 +64,20 @@ public class World implements Updatable, TickFree {
 		return mapName;
 	}
 
+	////////// SIZE ////////////
+
+	private SIZE zoom = SIZE.L;
+
+	@Override
+	public SIZE getZoom() {
+		return zoom;
+	}
+
+	@Override
+	public void setZoom(SIZE zoom) {
+		this.zoom = zoom;
+	}
+
 	////////// MAP OR LIST ////////////
 
 	private BufferedImage map;
@@ -86,13 +100,11 @@ public class World implements Updatable, TickFree {
 
 	////////// RENDER ////////////
 
-	public int pixel = 32;
-	
 	@Override
 	public void render(Graphics g) {
 		BufferedImage img = map;
 
-		int ratio = Size.M / pixel;
+		int ratio = Size.M / zoom.getSize();
 		int width = img.getWidth() * ratio;
 		int height = img.getHeight() * ratio;
 
