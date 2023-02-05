@@ -11,8 +11,10 @@ import com.sunsigne.reversedrebeccaleveleditor.Infos;
 
 public class Window {
 
-	public static final int WIDHT = 1280;
-	public static final int HEIGHT = 720;
+	//public static final int WIDHT = 1280;
+	//public static final int HEIGHT = 720;
+	public static final int WIDHT = 1920;
+	public static final int HEIGHT = 1080;
 
 	public static final float SCALE_X = (float) Toolkit.getDefaultToolkit().getScreenSize().width / WIDHT;
 	public static final float SCALE_Y = (float) Toolkit.getDefaultToolkit().getScreenSize().height / HEIGHT;

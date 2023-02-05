@@ -34,7 +34,6 @@ public class UserCanZoomOut extends WorldMouse implements TickFree {
 
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
-		System.out.println("hello");
 		if (World.get() == null)
 			return;
 

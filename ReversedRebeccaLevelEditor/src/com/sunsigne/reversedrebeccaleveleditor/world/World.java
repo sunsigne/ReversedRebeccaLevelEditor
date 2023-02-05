@@ -1,18 +1,20 @@
 package com.sunsigne.reversedrebeccaleveleditor.world;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import com.sunsigne.reversedrebecca.object.characteristics.Position;
 import com.sunsigne.reversedrebecca.pattern.ForceInit;
 import com.sunsigne.reversedrebecca.ressources.images.ImageTask;
 import com.sunsigne.reversedrebecca.system.Size;
 import com.sunsigne.reversedrebecca.system.mainloop.TickFree;
-import com.sunsigne.reversedrebecca.system.mainloop.Updatable;
 import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
 import com.sunsigne.reversedrebeccaleveleditor.system.Editor;
+import com.sunsigne.reversedrebeccaleveleditor.system.Window;
 import com.sunsigne.reversedrebeccaleveleditor.world.mouse.WorldMouse;
 
-public class World implements Updatable, TickFree, Zoomable {
+public class World implements Position, TickFree, Zoomable {
 
 	////////// SELF-CONTAINED ////////////
 
@@ -64,6 +66,30 @@ public class World implements Updatable, TickFree, Zoomable {
 		return mapName;
 	}
 
+	////////// POSITION ////////////
+
+	private int x, y;
+
+	@Override
+	public int getX() {
+		return x;
+	}
+
+	@Override
+	public int getY() {
+		return y;
+	}
+
+	@Override
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	@Override
+	public void setY(int y) {
+		this.y = y;
+	}
+
 	////////// SIZE ////////////
 
 	private SIZE zoom = SIZE.L;
@@ -76,6 +102,16 @@ public class World implements Updatable, TickFree, Zoomable {
 	@Override
 	public void setZoom(SIZE zoom) {
 		this.zoom = zoom;
+	}
+
+	@Override
+	public int getWidth() {
+		return 2 * Window.WIDHT / 3;
+	}
+
+	@Override
+	public int getHeight() {
+		return Window.HEIGHT;
 	}
 
 	////////// MAP OR LIST ////////////
@@ -108,7 +144,7 @@ public class World implements Updatable, TickFree, Zoomable {
 		int width = img.getWidth() * ratio;
 		int height = img.getHeight() * ratio;
 
-		g.drawImage(img, 0, 0, width, height, null);
+		g.drawImage(img, getX(), getY(), width, height, null);
 	}
 
 	////////// MOUSE ////////////
