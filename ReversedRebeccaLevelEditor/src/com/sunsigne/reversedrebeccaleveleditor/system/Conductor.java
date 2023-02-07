@@ -10,7 +10,6 @@ public class Conductor {
 
 	public void startApp() {
 
-		// new GameCursor().setCursor(CURSOR_TYPE.NORMAL);
 		new Window(Editor.getInstance());
 		Editor.getInstance().start();
 

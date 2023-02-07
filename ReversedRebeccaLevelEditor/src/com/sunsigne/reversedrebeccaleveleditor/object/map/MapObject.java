@@ -45,7 +45,7 @@ public class MapObject extends PanelObject implements TickFree, Zoomable {
 
 	public BufferedImage getImage() {
 		if (image == null)
-			image = new ImageTask().loadImage("maps/" + name + "/" + "ground"/* , true */);
+			image = new ImageTask().loadImage("maps/" + name + "/" + "ground");
 		return image;
 	}
 

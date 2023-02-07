@@ -41,7 +41,7 @@ public class UserCanMoveCamera extends MapMouse implements CameraDependency {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		if(new Tool().getCurrentTool() != TOOL.MOVEMAP)
+		if(new Tool().getCurrentTool() != TOOL.MOVE)
 			return;
 		
 		if (isSelected() == false || dragging == true)

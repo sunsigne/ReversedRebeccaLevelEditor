@@ -4,25 +4,25 @@ import java.awt.Cursor;
 
 import com.sunsigne.reversedrebeccaleveleditor.world.Tool.TOOL;
 
-public class SelectToolObject extends ToolObject {
+public class MoveToolObject extends ToolObject {
 
-	public SelectToolObject() {
-		super(0);
+	public MoveToolObject() {
+		super(30);
 	}
 
 	@SuppressWarnings("unused")
-	private static ToolObject instance = new SelectToolObject();
-
+	private static ToolObject instance = new MoveToolObject();
+	
 	@Override
 	public TOOL getTool() {
-		return TOOL.SELECT;
+		return TOOL.MOVE;
 	}
 
 	////////// CURSOR ////////////
-
+	
 	@Override
 	public Cursor getCursor() {
-		return Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
+		return Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR);
 	}
-
+	
 }
