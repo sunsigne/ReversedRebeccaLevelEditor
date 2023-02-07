@@ -1,7 +1,5 @@
 package com.sunsigne.reversedrebeccaleveleditor.system;
 
-import com.sunsigne.reversedrebeccaleveleditor.menu.LibraryMenu;
-import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
 import com.sunsigne.reversedrebeccaleveleditor.world.World;
 
 public class Conductor {
@@ -10,27 +8,19 @@ public class Conductor {
 
 	public void startApp() {
 		
+		// new GameCursor().setCursor(CURSOR_TYPE.NORMAL);
 		new Window(Editor.getInstance());
 		Editor.getInstance().start();
 		
-		new World("test");
-		LAYER.MENU.addObject(new LibraryMenu());
-		
-		/*
-		new GameCursor().setCursor(CURSOR_TYPE.NORMAL);
-		new Window(Game.getInstance());
-		Game.getInstance().start();
-
 		// LOADING OF MINIMAL RESSOURCES
 		new RessourceLoader().loadMinimalRessources();
-		Game.getInstance().forceLoop();
-
+		Editor.getInstance().forceLoop();
+		
 		// LOADING OF RESSOURCES
 		new RessourceLoader().loadRessources();
-		Game.getInstance().forceLoop();
-
-		new TitleScreen();
-		*/
+		Editor.getInstance().forceLoop();
+				
+		new World("test");
 	}
 
 	public void stopApp() {

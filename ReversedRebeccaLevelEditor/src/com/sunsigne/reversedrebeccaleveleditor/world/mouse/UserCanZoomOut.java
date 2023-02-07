@@ -10,7 +10,7 @@ import com.sunsigne.reversedrebeccaleveleditor.world.World;
 public class UserCanZoomOut extends WorldMouse implements TickFree {
 
 	private UserCanZoomOut() {
-		LAYER.MENU.addObject(this);
+		LAYER.PANEL.addObject(this);
 	}
 
 	private static WorldMouse worldMouse = new UserCanZoomOut();

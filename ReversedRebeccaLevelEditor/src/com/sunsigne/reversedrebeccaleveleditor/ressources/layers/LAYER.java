@@ -6,7 +6,7 @@ import com.sunsigne.reversedrebecca.system.mainloop.Updatable;
 public enum LAYER {
 	
 	MAP("map", new Handler(true)),
-	MENU("menu", new Handler(false));
+	PANEL("menu", new Handler(false));
 
 	private String name;
 	private Handler handler;

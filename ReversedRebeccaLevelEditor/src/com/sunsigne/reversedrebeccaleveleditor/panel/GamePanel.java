@@ -1,4 +1,4 @@
-package com.sunsigne.reversedrebeccaleveleditor.menu;
+package com.sunsigne.reversedrebeccaleveleditor.panel;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -6,18 +6,24 @@ import java.awt.Graphics;
 import com.sunsigne.reversedrebecca.object.characteristics.Position;
 import com.sunsigne.reversedrebecca.system.mainloop.TickFree;
 import com.sunsigne.reversedrebecca.system.mainloop.Updatable;
-import com.sunsigne.reversedrebeccaleveleditor.system.Window;
+import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
 
-public class LibraryMenu implements Position, Updatable, TickFree {
+public abstract class GamePanel implements Position, Updatable, TickFree {
 
-	public LibraryMenu() {
-
+	public GamePanel(int x, int y, int w, int h) {
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
+		
+		LAYER.PANEL.addObject(this);
 	}
 
+	public abstract GamePanel getPanel();
+	
 	////////// POSITION ////////////
 
-	private int x = 2 * Window.WIDHT / 3;
-	private int y = 0;
+	private int x, y;
 
 	@Override
 	public int getX() {
@@ -41,14 +47,16 @@ public class LibraryMenu implements Position, Updatable, TickFree {
 
 	////////// SIZE ////////////
 
+	private int w, h;
+
 	@Override
 	public int getWidth() {
-		return Window.WIDHT / 3;
+		return w;
 	}
 
 	@Override
 	public int getHeight() {
-		return Window.HEIGHT;
+		return h;
 	}
 
 	////////// RENDER ////////////
@@ -57,6 +65,9 @@ public class LibraryMenu implements Position, Updatable, TickFree {
 	public void render(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.fillRect(getX(), getY(), getWidth(), getHeight());
+
+		g.setColor(Color.WHITE);
+		g.drawRect(getX(), getY(), getWidth(), getHeight());
 	}
 
 }

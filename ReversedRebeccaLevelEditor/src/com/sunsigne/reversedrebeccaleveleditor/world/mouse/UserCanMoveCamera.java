@@ -9,7 +9,7 @@ import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
 public class UserCanMoveCamera extends WorldMouse implements CameraDependency {
 
 	private UserCanMoveCamera() {
-		LAYER.MENU.addObject(this);
+		LAYER.PANEL.addObject(this);
 	}
 
 	private static WorldMouse worldMouse = new UserCanMoveCamera();
