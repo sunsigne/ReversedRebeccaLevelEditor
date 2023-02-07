@@ -5,6 +5,8 @@ import java.awt.event.MouseEvent;
 import com.sunsigne.reversedrebecca.system.camera.CameraDependency;
 import com.sunsigne.reversedrebecca.system.controllers.mouse.MousePos;
 import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
+import com.sunsigne.reversedrebeccaleveleditor.world.Tool;
+import com.sunsigne.reversedrebeccaleveleditor.world.Tool.TOOL;
 
 public class UserCanMoveCamera extends MapMouse implements CameraDependency {
 
@@ -39,6 +41,9 @@ public class UserCanMoveCamera extends MapMouse implements CameraDependency {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
+		if(new Tool().getCurrentTool() != TOOL.MOVEMAP)
+			return;
+		
 		if (isSelected() == false || dragging == true)
 			return;
 
