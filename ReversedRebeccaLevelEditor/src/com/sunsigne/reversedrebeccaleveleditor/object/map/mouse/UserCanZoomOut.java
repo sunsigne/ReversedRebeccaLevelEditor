@@ -1,13 +1,12 @@
-package com.sunsigne.reversedrebeccaleveleditor.world.mouse;
+package com.sunsigne.reversedrebeccaleveleditor.object.map.mouse;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 
 import com.sunsigne.reversedrebecca.system.mainloop.TickFree;
 import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
-import com.sunsigne.reversedrebeccaleveleditor.world.World;
 
-public class UserCanZoomOut extends WorldMouse implements TickFree {
+public class UserCanZoomOut {/*extends WorldMouse implements TickFree {
 
 	private UserCanZoomOut() {
 		LAYER.PANEL.addObject(this);
@@ -42,6 +41,6 @@ public class UserCanZoomOut extends WorldMouse implements TickFree {
 
 		else
 			World.get().zoomOut();
-	}
+	}*/
 
 }

@@ -1,4 +1,4 @@
-package com.sunsigne.reversedrebeccaleveleditor.object;
+package com.sunsigne.reversedrebeccaleveleditor.object.map;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -6,8 +6,9 @@ import java.awt.image.BufferedImage;
 import com.sunsigne.reversedrebecca.ressources.images.ImageTask;
 import com.sunsigne.reversedrebecca.system.Size;
 import com.sunsigne.reversedrebecca.system.mainloop.TickFree;
+import com.sunsigne.reversedrebeccaleveleditor.object.PanelObject;
+import com.sunsigne.reversedrebeccaleveleditor.object.characteristics.Zoomable;
 import com.sunsigne.reversedrebeccaleveleditor.panel.MapPanel;
-import com.sunsigne.reversedrebeccaleveleditor.world.Zoomable;
 
 public class MapObject extends PanelObject implements TickFree, Zoomable {
 

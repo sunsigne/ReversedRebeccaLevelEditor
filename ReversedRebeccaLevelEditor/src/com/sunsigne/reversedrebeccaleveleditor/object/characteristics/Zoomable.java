@@ -1,4 +1,4 @@
-package com.sunsigne.reversedrebeccaleveleditor.world;
+package com.sunsigne.reversedrebeccaleveleditor.object.characteristics;
 
 public interface Zoomable {
 

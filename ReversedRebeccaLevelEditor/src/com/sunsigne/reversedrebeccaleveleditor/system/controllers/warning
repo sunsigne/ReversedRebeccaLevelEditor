@@ -1,1 +1,1 @@
-The method "destroyControls()" in Updatable is not designed to remove this app controllers
+The method "destroyControls()" in Updatable is not designed to remove those app controllers. You have to do it manually when needed.

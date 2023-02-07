@@ -1,4 +1,4 @@
-package com.sunsigne.reversedrebeccaleveleditor.world.mouse;
+package com.sunsigne.reversedrebeccaleveleditor.object.map.mouse;
 
 import java.awt.event.MouseEvent;
 
@@ -6,17 +6,17 @@ import com.sunsigne.reversedrebecca.system.camera.CameraDependency;
 import com.sunsigne.reversedrebecca.system.controllers.mouse.MousePos;
 import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
 
-public class UserCanMoveCamera extends WorldMouse implements CameraDependency {
+public class UserCanMoveCamera extends MapMouse implements CameraDependency {
 
 	private UserCanMoveCamera() {
 		LAYER.PANEL.addObject(this);
 	}
 
-	private static WorldMouse worldMouse = new UserCanMoveCamera();
+	private static MapMouse mapMouse = new UserCanMoveCamera();
 
 	@Override
-	public WorldMouse getWorldMouse() {
-		return worldMouse;
+	public MapMouse getMapMouse() {
+		return mapMouse;
 	}
 
 	////////// TICK ////////////
