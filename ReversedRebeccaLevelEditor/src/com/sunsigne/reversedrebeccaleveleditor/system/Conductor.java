@@ -1,5 +1,6 @@
 package com.sunsigne.reversedrebeccaleveleditor.system;
 
+import com.sunsigne.reversedrebeccaleveleditor.panel.MapPanel;
 import com.sunsigne.reversedrebeccaleveleditor.world.World;
 
 public class Conductor {
@@ -20,7 +21,8 @@ public class Conductor {
 		new RessourceLoader().loadRessources();
 		Editor.getInstance().forceLoop();
 				
-		new World("test");
+		MapPanel.getInstance().loadMap("test");
+		//new World("test");
 	}
 
 	public void stopApp() {

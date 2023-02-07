@@ -8,9 +8,9 @@ public class LibraryPanel extends GamePanel {
 		super(2 * Window.WIDHT / 3, 0, Window.WIDHT / 3, Window.HEIGHT);
 	}
 
-	private static GamePanel instance = new LibraryPanel();
+	private static LibraryPanel instance = new LibraryPanel();
 
-	public static GamePanel getInstance() {
+	public static LibraryPanel getInstance() {
 		return instance;
 	}
 
