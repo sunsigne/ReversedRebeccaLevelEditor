@@ -19,8 +19,6 @@ public abstract class GamePanel implements Position, Updatable, TickFree {
 		LAYER.PANEL.addObject(this);
 	}
 
-	public abstract GamePanel getPanel();
-	
 	////////// POSITION ////////////
 
 	private int x, y;

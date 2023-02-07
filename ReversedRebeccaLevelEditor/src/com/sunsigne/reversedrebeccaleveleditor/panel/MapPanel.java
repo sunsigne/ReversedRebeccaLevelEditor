@@ -10,11 +10,10 @@ public class MapPanel extends GamePanel {
 		super(0, 0, 2 * Window.WIDHT / 3, Window.HEIGHT);
 	}
 
-	private static GamePanel panel = new MapPanel();
+	private static GamePanel instance = new MapPanel();
 
-	@Override
-	public GamePanel getPanel() {
-		return panel;
+	public static GamePanel getInstance() {
+		return instance;
 	}
 
 	////////// RENDER ////////////
