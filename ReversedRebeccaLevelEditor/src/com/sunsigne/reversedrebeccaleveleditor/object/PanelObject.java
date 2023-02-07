@@ -8,8 +8,8 @@ public abstract class PanelObject implements Position, Updatable {
 
 	public PanelObject(GamePanel panel, int x, int y, int w, int h) {
 		this.panel = panel;
-		this.x = x;
-		this.y = y;
+		this.x = panel.getX() + x;
+		this.y = panel.getY() + y;
 		this.w = w;
 		this.h = h;
 	}
@@ -26,22 +26,22 @@ public abstract class PanelObject implements Position, Updatable {
 
 	@Override
 	public int getX() {
-		return x - panel.getX();
+		return x;
 	}
 
 	@Override
 	public int getY() {
-		return y - panel.getX();
+		return y;
 	}
 
 	@Override
 	public void setX(int x) {
-		this.x = panel.getX() + x;
+		this.x = x;
 	}
 
 	@Override
 	public void setY(int y) {
-		this.y = panel.getX() + y;
+		this.y = y;
 	}
 
 	////////// SIZE ////////////

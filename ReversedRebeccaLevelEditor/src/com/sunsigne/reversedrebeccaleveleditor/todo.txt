@@ -1,4 +1,4 @@
 remplacer le fichier ressource du projet par qq chose de + définitif
 faire en sorte que le zoom se fasse de façon centrée vis-à-vis de la souris.
 créer une "barre d'outils" où le niveau de zoom est affichée
-Changer la taille de la fenêtre, et rendre ça compatbile avec l'affichage
+créer des boutons pour quitter l'application et couper la musique

@@ -11,8 +11,6 @@ import com.sunsigne.reversedrebeccaleveleditor.Infos;
 
 public class Window {
 
-	//public static final int WIDHT = 1280;
-	//public static final int HEIGHT = 720;
 	public static final int WIDHT = 1920;
 	public static final int HEIGHT = 1080;
 
@@ -35,7 +33,7 @@ public class Window {
 		frame.add(editor, BorderLayout.CENTER);
 		frame.setIconImage(icon.getImage());
 		frame.setResizable(false);
-		// frame.setUndecorated(false);
+		frame.setUndecorated(true);
 		frame.setVisible(true);
 		frame.pack();
 		frame.setLocationRelativeTo(null);

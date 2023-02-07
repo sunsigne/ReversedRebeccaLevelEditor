@@ -9,7 +9,7 @@ import com.sunsigne.reversedrebeccaleveleditor.system.Window;
 public class MapPanel extends GamePanel {
 
 	public MapPanel() {
-		super(0, 0, 2 * Window.WIDHT / 3, Window.HEIGHT);		
+		super(0, 35, 2 * Window.WIDHT / 3, Window.HEIGHT - 35);		
 	}
 
 	private static MapPanel instance = new MapPanel();
