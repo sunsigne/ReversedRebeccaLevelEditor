@@ -6,17 +6,17 @@ import java.awt.event.MouseWheelEvent;
 import com.sunsigne.reversedrebecca.system.mainloop.TickFree;
 import com.sunsigne.reversedrebeccaleveleditor.ressources.layers.LAYER;
 
-public class UserCanZoomOut {/*extends WorldMouse implements TickFree {
+public class UserCanZoomOut extends MapMouse implements TickFree {
 
 	private UserCanZoomOut() {
 		LAYER.PANEL.addObject(this);
 	}
 
-	private static WorldMouse worldMouse = new UserCanZoomOut();
+	private static MapMouse mapMouse = new UserCanZoomOut();
 
 	@Override
-	public WorldMouse getWorldMouse() {
-		return worldMouse;
+	public MapMouse getMapMouse() {
+		return mapMouse;
 	}
 
 	////////// MOUSE ////////////
@@ -33,14 +33,14 @@ public class UserCanZoomOut {/*extends WorldMouse implements TickFree {
 
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
-		if (World.get() == null)
+		if (getMap() == null)
 			return;
 
 		if (e.getWheelRotation() > 0)
-			World.get().zoomIn();
+			getMap().zoomIn();
 
 		else
-			World.get().zoomOut();
-	}*/
+			getMap().zoomOut();
+	}
 
 }

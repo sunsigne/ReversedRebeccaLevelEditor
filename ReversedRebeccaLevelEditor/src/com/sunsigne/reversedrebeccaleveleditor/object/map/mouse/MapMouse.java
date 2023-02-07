@@ -12,7 +12,7 @@ public abstract class MapMouse implements MouseUserEvent, RenderFree {
 
 	////////// POSITION ////////////
 
-	private MapObject getMap() {
+	protected MapObject getMap() {
 		return MapPanel.getInstance().getMap();
 	}
 
